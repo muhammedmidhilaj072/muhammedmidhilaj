@@ -55,6 +55,41 @@
             color: #FFD700;
         }
 
+        /* Social Media Icons */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Icons */
+        .fa {
+            transition: color 0.3s;
+        }
+
+        .fa-instagram:hover {
+            color: #E1306C;
+        }
+
+        .fa-linkedin:hover {
+            color: #0A66C2;
+        }
+
         /* Content Styling */
         .container {
             display: flex;
@@ -109,9 +144,18 @@
             z-index: 0;
         }
     </style>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="overlay"></div>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/wrecked_lens" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </div>
 
     <nav class="nav">
         <a href="index.html">Home</a>
