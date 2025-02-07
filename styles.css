@@ -1,0 +1,79 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('camera-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* Social Media Links (Vertical Left Side) */
+.social-links {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Centered Content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.content {
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #f4b400;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
