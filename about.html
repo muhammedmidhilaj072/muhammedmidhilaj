@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Muhammed Midhilaj</title>
+    <title>About Me - Midhlaj</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
+            background: url('https://source.unsplash.com/1600x900/?portrait,photography') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
-            padding: 50px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
         }
         .nav {
             position: absolute;
@@ -36,6 +28,9 @@
             transform: translateX(-50%);
             display: flex;
             gap: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .nav a {
             color: white;
@@ -44,20 +39,32 @@
             transition: 0.3s;
         }
         .nav a:hover {
-            opacity: 0.7;
+            color: #FFD700;
+        }
+        .content {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="nav">
+    <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="container">
-        <h1>Hey, I'm Midhilaj</h1>
-        <p>Through my lens, I capture the world’s quiet poetry—the overlooked corners, fleeting glances, and raw moments that speak louder than words. Photography is my way of storytelling, a silent dialogue with the world around me. Whether it’s the vibrant chaos of a crowded street or the subtle calm of evening light, each frame is a piece of the story I’m piecing together.</p>
+    </nav>
+    
+    <div class="content">
+        <h1>About Me</h1>
+        <p>Photography is my way of storytelling, a silent dialogue with the world around me. Whether it’s the vibrant chaos of a crowded street or the subtle calm of evening light, each frame is a piece of the story I’m piecing together.</p>
     </div>
 </body>
 </html>
