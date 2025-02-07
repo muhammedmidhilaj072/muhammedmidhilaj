@@ -1,2 +1,2 @@
-# muhammedmidhilaj
+# MUHAMMED MIDHILAJ
 Photography portfolio
