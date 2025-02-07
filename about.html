@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Midhlaj</title>
+    <title>About | Muhammed Midhilaj</title>
 
-    <!-- Google Font (Montserrat) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Google Font: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <!-- Custom CSS -->
     <style>
         * {
             margin: 0;
@@ -17,84 +18,125 @@
         }
 
         body {
-            background: url('https://source.unsplash.com/1600x900/?portrait,photography') no-repeat center center/cover;
-            height: 100vh;
+            background-color: #D1CDB1; /* Same as Home Page */
+            color: #015f68; /* Same as Home Page */
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            color: white;
-            text-align: center;
+            height: 100vh;
+            text-align: left;
+            padding: 50px;
             position: relative;
         }
 
-        /* Dark Overlay */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 0;
-        }
-
+        /* Navigation Bar */
         .nav {
             position: absolute;
-            top: 20px;
+            top: 80px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 12px 25px;
-            border-radius: 50px;
-            z-index: 1;
         }
 
         .nav a {
-            color: white;
+            color: #015f68;
             text-decoration: none;
             font-size: 1.2rem;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 400;
+            transition: 0.3s;
         }
 
         .nav a:hover {
-            color: #FFD700;
+            color: #ff9800;
         }
 
-        .content {
-            z-index: 1;
-            text-align: center;
-            max-width: 600px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 15px;
+        /* Content Layout */
+        .about-container {
+            display: flex;
+            max-width: 900px;
+            gap: 50px;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
+        /* Text Section */
+        .about-text {
+            flex: 1;
         }
 
-        p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-top: 10px;
+        .about-text h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
+
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        /* Profile Image */
+        .about-image img {
+            width: 250px; /* Adjust size as needed */
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #015f68;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff9800;
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="content">
-        <h1>About Me</h1>
-        <p>Photography is my way of storytelling, a silent dialogue with the world around me. Whether it’s the vibrant chaos of a crowded street or the subtle calm of evening light, each frame is a piece of the story I’m piecing together.</p>
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
     </div>
+
+    <!-- About Content -->
+    <div class="about-container">
+        <div class="about-text">
+            <h1>About Me</h1>
+            <p>
+                I'm Muhammed Midhilaj, a passionate photographer with an eye for capturing raw emotions 
+                and untold stories. Through my lens, I aim to freeze moments in time, creating images 
+                that speak beyond words.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="profile.jpg" alt="Muhammed Midhilaj">
+        </div>
+    </div>
+
 </body>
 </html>
