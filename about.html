@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Midhlaj</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>About Midhlaj</title>
+
+    <!-- Google Font (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,48 +15,72 @@
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
         }
+
         body {
             background: url('https://source.unsplash.com/1600x900/?portrait,photography') no-repeat center center/cover;
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
             color: white;
             text-align: center;
+            position: relative;
         }
+
+        /* Dark Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
         .nav {
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-            border-radius: 10px;
+            gap: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px 25px;
+            border-radius: 50px;
+            z-index: 1;
         }
+
         .nav a {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            transition: 0.3s;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
         .nav a:hover {
             color: #FFD700;
         }
+
         .content {
+            z-index: 1;
+            text-align: center;
             max-width: 600px;
-            padding: 20px;
             background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
         }
+
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: 700;
         }
+
         p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
             margin-top: 10px;
         }
@@ -64,7 +91,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
     </nav>
-    
+
     <div class="content">
         <h1>About Me</h1>
         <p>Photography is my way of storytelling, a silent dialogue with the world around me. Whether it’s the vibrant chaos of a crowded street or the subtle calm of evening light, each frame is a piece of the story I’m piecing together.</p>
