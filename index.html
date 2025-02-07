@@ -17,44 +17,48 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* Background and Font Colors (Similar to Pubarun's Website) */
         body {
-            background-color: #D1CDB1;
-            color: #015f68;
+            background-color: #1A1A1A;  /* Dark Grey like Pubarun's site */
+            color: #EDEDED;  /* Light Grey text color */
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 50px;
+            padding: 70px;
         }
 
-        /* Left Section (Text Content) */
+        /* Left Section: Text Content */
         .text-container {
             width: 50%;
             text-align: left;
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: 600;
+            font-size: 5rem; /* Similar size to Pubarun's website */
+            font-weight: 700;
+            line-height: 5.5rem;
+            text-transform: uppercase;
         }
 
         p {
-            font-size: 1.2rem;
-            margin-top: 10px;
+            font-size: 1.5rem;
+            margin-top: 20px;
             max-width: 500px;
+            line-height: 2rem;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar - Moved Slightly Down */
         .nav {
             position: absolute;
-            top: 20px;
-            left: 50px;
+            top: 80px;
+            left: 70px;
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
 
         .nav a {
-            color: #015f68;
+            color: #EDEDED;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 400;
@@ -62,33 +66,35 @@
         }
 
         .nav a:hover {
-            color: #ff9800;
+            color: #FF9800;
         }
 
-        /* Social Media Links on Left */
+        /* Social Media Links on Left (Vertical Alignment) */
         .social-links {
             position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: 40px;
+            bottom: 100px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .social-links a {
-            color: #015f68;
+            color: #EDEDED;
             font-size: 1.2rem;
             text-decoration: none;
+            writing-mode: vertical-rl; /* Rotates text to vertical */
+            transform: rotate(180deg);
+            letter-spacing: 3px;
         }
 
         .social-links a:hover {
-            color: #ff9800;
+            color: #FF9800;
         }
 
         /* Camera Image on Right Side */
         .camera-image {
-            width: 450px; /* Adjusted size like Pubarun Basu's website */
+            width: 500px; /* Adjusted size like Pubarun's */
             height: auto;
             object-fit: cover;
         }
@@ -107,14 +113,15 @@
 
     <!-- Left Section: Text -->
     <div class="text-container">
-        <h1>Hey, I'm Midhilaj</h1>
-        <p>A young photographer with a wrecked lens.</p>
+        <h1>Hey,<br>I'm Midhilaj</h1>  <!-- Split into two lines like Pubarun's -->
+        <br>  <!-- Added space for a more structured layout -->
+        <p>A young photographer <br>with a wrecked lens.</p>
     </div>
 
     <!-- Right Section: Camera Image -->
     <img src="camera.jpg" alt="Camera" class="camera-image">
 
-    <!-- Social Media Links -->
+    <!-- Social Media Links (Vertical) -->
     <div class="social-links">
         <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
         <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
