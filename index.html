@@ -17,29 +17,32 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* Background and Colors (Matched to Pubarun's Site) */
         body {
-            background-color: #D1CDB1;
-            color: #141414;
+            background-color: #141414; /* Dark background */
+            color: #D9D9D9; /* Light grey text */
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            text-align: left;
+            padding: 50px;
             position: relative;
         }
 
-        /* Navigation Bar */
+        /* Navigation - Centered */
         .nav {
             position: absolute;
-            top: 10%;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
 
         .nav a {
-            color: #141414;
+            color: #D9D9D9;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 400;
@@ -47,91 +50,69 @@
         }
 
         .nav a:hover {
-            color: #ff9800;
+            color: #FFA500;
         }
 
-        /* Social Media Links on Left */
-        .social-links {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: #141414;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #ff9800;
-        }
-
-        /* Main Text Animation */
-        .main-text {
-            text-align: left;
+        /* Main Text Section */
+        .text-container {
             position: absolute;
             left: 10%;
             top: 50%;
             transform: translateY(-50%);
-            opacity: 0;
-            animation: fadeInUp 1.5s ease-out forwards;
         }
 
-        .main-text h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            line-height: 1.1;
+        h1 {
+            font-size: 5rem; /* Large text like Pubarun’s */
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 5rem;
         }
 
-        .main-text p {
-            font-size: 1.2rem;
-            margin-top: 10px;
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
             max-width: 500px;
+            line-height: 2rem;
         }
 
-        /* Camera Image */
+        /* Social Media Links - Vertical */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #D9D9D9;
+            font-size: 1.2rem;
+            text-decoration: none;
+            writing-mode: vertical-rl; /* Rotates text to vertical */
+            transform: rotate(180deg); /* Ensures readable vertical text */
+            letter-spacing: 3px;
+        }
+
+        .social-links a:hover {
+            color: #FFA500;
+        }
+
+        /* Camera Image - Right Aligned */
         .camera-image {
             position: absolute;
             right: 10%;
             top: 50%;
             transform: translateY(-50%);
-            width: 400px;
+            width: 450px; /* Similar size to Pubarun’s */
             height: auto;
-            opacity: 0;
-            animation: fadeInRight 1.5s ease-out forwards 0.5s;
+            object-fit: cover;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html">Home</a>
@@ -140,19 +121,21 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Social Media Links -->
+    <!-- Left Section: Text -->
+    <div class="text-container">
+        <h1>Hey,<br>I'm Midhilaj</h1>  <!-- Split into two lines like Pubarun's -->
+        <br>  <!-- Added space for a more structured layout -->
+        <p>A young photographer <br>with a wrecked lens.</p>
+    </div>
+
+    <!-- Right Section: Camera Image -->
+    <img src="camera.jpg" alt="Camera" class="camera-image">
+
+    <!-- Social Media Links (Vertical) -->
     <div class="social-links">
         <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
         <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-text">
-        <h1>Hey, <br> I'm Midhilaj</h1>
-        <p>A young photographer with a wrecked lens.</p>
-    </div>
-
-    <!-- Camera Image -->
-    <img src="camera.jpg" alt="Camera" class="camera-image">
 </body>
 </html>
