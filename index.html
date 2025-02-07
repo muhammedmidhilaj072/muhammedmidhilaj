@@ -3,27 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midhilaj | Photography</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Muhammed Midhilaj | Photography</title>
+    
+    <!-- Google Font: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Background Camera Image */
+        .hero {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('camera.jpg') no-repeat center center/cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Main Text */
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+        /* Navigation Bar */
+        .nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Media Links on Left */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff9800;
+        }
+
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Background Image -->
+    <div class="hero"></div>
+
+    <!-- Navigation -->
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
-        <h1>Muhammed Midhilaj</h1>
-        <p>A young photographer with a wrecked lens.</p>
-    </div>
+    <h1>Hey, I'm Midhilaj</h1>
+    <p>Through my lens, I capture the world’s quiet poetry—the overlooked corners, fleeting glances, and raw moments that speak louder than words.</p>
 
     <!-- Social Media Links -->
     <div class="social-links">
-        <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/wrecked_lens" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
     </div>
 
 </body>
