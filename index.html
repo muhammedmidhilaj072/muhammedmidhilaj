@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Midhilaj | Photography</title>
+    <title>Midhlaj | Photography</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         body {
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero {
+            background: url('https://source.unsplash.com/1600x900/?camera,landscape') no-repeat center center/cover;
             height: 100vh;
-            background: url('your-image.jpg') no-repeat center center/cover;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 10px;
+            color: white;
+            text-align: center;
         }
         .nav {
             position: absolute;
@@ -40,6 +28,9 @@
             transform: translateX(-50%);
             display: flex;
             gap: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .nav a {
             color: white;
@@ -48,20 +39,32 @@
             transition: 0.3s;
         }
         .nav a:hover {
-            opacity: 0.7;
+            color: #FFD700;
+        }
+        .content {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Gallery</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
-    <div class="hero">
-        <h1>Hey, I'm Muhammed Midhilaj</h1>
-        <p>Through my lens, I capture the world’s quiet poetry.</p>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </nav>
+    
+    <div class="content">
+        <h1>Hey, my name is Midhlaj.</h1>
+        <p>Through my lens, I capture the world’s quiet poetry—the overlooked corners, fleeting glances, and raw moments that speak louder than words.</p>
     </div>
 </body>
 </html>
