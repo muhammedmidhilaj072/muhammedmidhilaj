@@ -20,21 +20,35 @@
         body {
             background-color: #D1CDB1;
             color: #015f68;
-            text-align: center;
             height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            position: relative;
+            justify-content: space-between;
+            padding: 50px;
+        }
+
+        /* Left Section (Text Content) */
+        .text-container {
+            width: 50%;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 500px;
         }
 
         /* Navigation Bar */
         .nav {
             position: absolute;
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 50px;
             display: flex;
             gap: 30px;
         }
@@ -72,14 +86,11 @@
             color: #ff9800;
         }
 
-        /* Camera Image on Right */
+        /* Camera Image on Right Side */
         .camera-image {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%);
-            width: 300px; /* Adjust this to resize */
+            width: 450px; /* Adjusted size like Pubarun Basu's website */
             height: auto;
+            object-fit: cover;
         }
 
     </style>
@@ -94,18 +105,20 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Main Content -->
-    <h1>Hey, I'm Midhilaj</h1>
-    <p>A young photographer with a wrecked lens.</p>
+    <!-- Left Section: Text -->
+    <div class="text-container">
+        <h1>Hey, I'm Midhilaj</h1>
+        <p>A young photographer with a wrecked lens.</p>
+    </div>
+
+    <!-- Right Section: Camera Image -->
+    <img src="camera.jpg" alt="Camera" class="camera-image">
 
     <!-- Social Media Links -->
     <div class="social-links">
         <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
         <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
     </div>
-
-    <!-- Camera Image on Right Side -->
-    <img src="camera.jpg" alt="Camera" class="camera-image">
 
 </body>
 </html>
