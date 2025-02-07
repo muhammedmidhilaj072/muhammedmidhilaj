@@ -17,55 +17,28 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Background and Colors (Matched to Pubarun's Site) */
+        /* Background and Font Colors (Similar to Pubarun's Website) */
         body {
-            background-color: #141414; /* Dark background */
-            color: #D9D9D9; /* Light grey text */
+            background-color: #1A1A1A;  /* Dark Grey like Pubarun's site */
+            color: #EDEDED;  /* Light Grey text color */
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: left;
-            padding: 50px;
-            position: relative;
+            justify-content: space-between;
+            padding: 70px;
         }
 
-        /* Navigation - Centered */
-        .nav {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav a {
-            color: #D9D9D9;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 400;
-            transition: 0.3s;
-        }
-
-        .nav a:hover {
-            color: #FFA500;
-        }
-
-        /* Main Text Section */
+        /* Left Section: Text Content */
         .text-container {
-            position: absolute;
-            left: 10%;
-            top: 50%;
-            transform: translateY(-50%);
+            width: 50%;
+            text-align: left;
         }
 
         h1 {
-            font-size: 5rem; /* Large text like Pubarun’s */
+            font-size: 5rem; /* Similar size to Pubarun's website */
             font-weight: 700;
+            line-height: 5.5rem;
             text-transform: uppercase;
-            line-height: 5rem;
         }
 
         p {
@@ -75,10 +48,31 @@
             line-height: 2rem;
         }
 
-        /* Social Media Links - Vertical */
+        /* Navigation Bar - Moved Slightly Down */
+        .nav {
+            position: absolute;
+            top: 80px;
+            left: 70px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: #EDEDED;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            color: #FF9800;
+        }
+
+        /* Social Media Links on Left (Vertical Alignment) */
         .social-links {
             position: fixed;
-            left: 20px;
+            left: 40px;
             bottom: 100px;
             display: flex;
             flex-direction: column;
@@ -86,25 +80,21 @@
         }
 
         .social-links a {
-            color: #D9D9D9;
+            color: #EDEDED;
             font-size: 1.2rem;
             text-decoration: none;
             writing-mode: vertical-rl; /* Rotates text to vertical */
-            transform: rotate(180deg); /* Ensures readable vertical text */
+            transform: rotate(180deg);
             letter-spacing: 3px;
         }
 
         .social-links a:hover {
-            color: #FFA500;
+            color: #FF9800;
         }
 
-        /* Camera Image - Right Aligned */
+        /* Camera Image on Right Side */
         .camera-image {
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 450px; /* Similar size to Pubarun’s */
+            width: 500px; /* Adjusted size like Pubarun's */
             height: auto;
             object-fit: cover;
         }
