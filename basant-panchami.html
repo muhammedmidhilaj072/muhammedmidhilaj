@@ -133,7 +133,7 @@
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="portfolio.html">Projects</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
     </nav>
 
@@ -172,25 +172,11 @@
     <!-- JavaScript -->
     <script>
         let currentImageIndex = 0;
-        let images = [
-            "images/basant-panchami/img1.jpg.jpg",
-            "images/basant-panchami/img2.jpg.jpg",
-            "images/basant-panchami/img3.jpg.jpg",
-            "images/basant-panchami/img4.jpg.jpg",
-            "images/basant-panchami/img5.jpg.jpg",
-            "images/basant-panchami/img6.jpg.jpg",
-            "images/basant-panchami/img7.jpg.jpg",
-            "images/basant-panchami/img8.jpg.jpg",
-            "images/basant-panchami/img9.jpg.jpg",
-            "images/basant-panchami/img10.jpg.jpg"
-            "images/basant-panchami/img11.jpg.jpg"
-        "images/basant-panchami/img12.jpg.jpg"
-        "images/basant-panchami/img13.jpg.jpg"
-        "images/basant-panchami/img14.jpg.jpg"
-        "images/basant-panchami/img15.jpg.jpg"
-        "images/basant-panchami/img16.jpg.jpg"
-        "images/basant-panchami/img17.jpg.jpg"
-        ];
+        let images = [];
+
+        for (let i = 1; i <= 17; i++) {
+            images.push(`images/basant-panchami/img${i}.jpg.jpg`);
+        }
 
         function openLightbox(index) {
             currentImageIndex = index;
