@@ -66,10 +66,45 @@
             height: auto;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
+        }
+
+        /* Lightbox Effect */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
         }
 
     </style>
@@ -89,23 +124,70 @@
 
     <!-- Image Gallery -->
     <div class="gallery">
-        <img src="images/basant-panchami/img1.jpg.jpg" alt="Basant Panchami Image 1">
-        <img src="images/basant-panchami/img2.jpg.jpg" alt="Basant Panchami Image 2">
-        <img src="images/basant-panchami/img3.jpg.jpg" alt="Basant Panchami Image 3">
-        <img src="images/basant-panchami/img4.jpg.jpg" alt="Basant Panchami Image 4">
-        <img src="images/basant-panchami/img5.jpg.jpg" alt="Basant Panchami Image 5">
-        <img src="images/basant-panchami/img6.jpg.jpg" alt="Basant Panchami Image 6">
-        <img src="images/basant-panchami/img7.jpg.jpg" alt="Basant Panchami Image 7">
-        <img src="images/basant-panchami/img8.jpg.jpg" alt="Basant Panchami Image 8">
-        <img src="images/basant-panchami/img9.jpg.jpg" alt="Basant Panchami Image 9">
-        <img src="images/basant-panchami/img10.jpg.jpg" alt="Basant Panchami Image 10">
-        <img src="images/basant-panchami/img11.jpg.jpg" alt="Basant Panchami Image 11">
-        <img src="images/basant-panchami/img12.jpg.jpg" alt="Basant Panchami Image 12">
-        <img src="images/basant-panchami/img13.jpg.jpg" alt="Basant Panchami Image 13">
-        <img src="images/basant-panchami/img14.jpg.jpg" alt="Basant Panchami Image 14">
-        <img src="images/basant-panchami/img15.jpg.jpg" alt="Basant Panchami Image 15">
-        <img src="images/basant-panchami/img16.jpg.jpg" alt="Basant Panchami Image 16">
-        <img src="images/basant-panchami/img17.jpg.jpg" alt="Basant Panchami Image 17">
+        <!-- Images with links to open in full-screen -->
+        <a href="#img1"><img src="images/basant-panchami/img1.jpg.jpg" alt="Basant Panchami Image 1"></a>
+        <a href="#img2"><img src="images/basant-panchami/img2.jpg.jpg" alt="Basant Panchami Image 2"></a>
+        <a href="#img3"><img src="images/basant-panchami/img3.jpg.jpg" alt="Basant Panchami Image 3"></a>
+        <a href="#img4"><img src="images/basant-panchami/img4.jpg.jpg" alt="Basant Panchami Image 4"></a>
+        <a href="#img5"><img src="images/basant-panchami/img5.jpg.jpg" alt="Basant Panchami Image 5"></a>
+        <a href="#img6"><img src="images/basant-panchami/img6.jpg.jpg" alt="Basant Panchami Image 6"></a>
+        <a href="#img7"><img src="images/basant-panchami/img7.jpg.jpg" alt="Basant Panchami Image 7"></a>
+        <a href="#img8"><img src="images/basant-panchami/img8.jpg.jpg" alt="Basant Panchami Image 8"></a>
+        <a href="#img9"><img src="images/basant-panchami/img9.jpg.jpg" alt="Basant Panchami Image 9"></a>
+        <a href="#img10"><img src="images/basant-panchami/img10.jpg.jpg" alt="Basant Panchami Image 10"></a>
+        <a href="#img11"><img src="images/basant-panchami/img11.jpg.jpg" alt="Basant Panchami Image 11"></a>
+        <a href="#img12"><img src="images/basant-panchami/img12.jpg.jpg" alt="Basant Panchami Image 12"></a>
+        <a href="#img13"><img src="images/basant-panchami/img13.jpg.jpg" alt="Basant Panchami Image 13"></a>
+        <a href="#img14"><img src="images/basant-panchami/img14.jpg.jpg" alt="Basant Panchami Image 14"></a>
+        <a href="#img15"><img src="images/basant-panchami/img15.jpg.jpg" alt="Basant Panchami Image 15"></a>
+        <a href="#img16"><img src="images/basant-panchami/img16.jpg.jpg" alt="Basant Panchami Image 16"></a>
+        <a href="#img17"><img src="images/basant-panchami/img17.jpg.jpg" alt="Basant Panchami Image 17"></a>
+    </div>
+
+    <!-- Lightbox for each image -->
+    <div id="img1" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img1.jpg.jpg">
+    </div>
+
+    <div id="img2" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img2.jpg.jpg">
+    </div>
+
+    <div id="img3" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img3.jpg.jpg">
+    </div>
+
+    <div id="img4" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img4.jpg.jpg">
+    </div>
+
+    <div id="img5" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img5.jpg.jpg">
+    </div>
+
+    <div id="img6" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img6.jpg.jpg">
+    </div>
+
+    <div id="img7" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img7.jpg.jpg">
+    </div>
+
+    <div id="img8" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img8.jpg.jpg">
+    </div>
+
+    <div id="img9" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/basant-panchami/img9.jpg.jpg">
     </div>
 
 </body>
