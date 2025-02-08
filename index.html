@@ -8,7 +8,12 @@
     <!-- Google Font: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- GSAP Animation Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- SplitType for Split Text Animation -->
+<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
+
 
     <!-- Custom CSS -->
     <style>
@@ -125,8 +130,7 @@
 
     <!-- Left Section: Text -->
     <div class="main-content">
-    <h1>Hey, <br> I'm Midhilaj</h1>
-        <h1 class="animated-text">Hey, I'm Midhilaj</h1>
+    <h1 class="animated-text">Hey, I'm Midhilaj</h1>
 
     <p>A young photographer with a wrecked lens.</p>
 </div>
@@ -141,13 +145,19 @@
         <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
     </div>
 <script>
-  gsap.from(".animated-text", {
+  // Split the text into letters
+  const text = new SplitType('.animated-text', { types: 'chars' });
+
+  // Apply GSAP animation
+  gsap.from(text.chars, {
     opacity: 0,
-    y: 30,
-    duration: 1.5,
-    ease: "power3.out",
+    y: 50,
+    stagger: 0.05,
+    duration: 1.2,
+    ease: "power4.out"
   });
 </script>
+
 
 </body>
 </html>
