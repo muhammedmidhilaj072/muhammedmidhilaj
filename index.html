@@ -8,12 +8,11 @@
     <!-- Google Font: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-   <!-- GSAP Animation Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- SplitType for Split Text Animation -->
-<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
-
+    <!-- SplitType for Split Text Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
 
     <!-- Custom CSS -->
     <style>
@@ -24,33 +23,91 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Background and Font Colors (Similar to Pubarun's Website) */
+        /* Background and Font Colors */
         body {
-            background-color: #DCDCDC;  /* Dark Grey like Pubarun's site */
-            color: #1C1C1C;  /* Light Grey text color */
-            height: 100vh;
+            background-color: #DCDCDC;  /* Light Grey */
+            color: #1C1C1C;  /* Dark Text */
+        }
+
+        /* Main Container */
+        .container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 80px; /* Adjust spacing between sections */
             padding: 70px;
         }
 
-        /* Left Section: Text Content */
-        .text-container {
-            width: 50%;
-            text-align: left;
+        /* Navigation Bar */
+        .nav {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: #1C1C1C;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            color: #1C1C1C;
+        }
+
+        /* Main Header Section */
+        .header-section {
+            text-align: center;
+            padding-top: 80px;
         }
 
         h1 {
-            font-size: 5rem; /* Similar size to Pubarun's website */
+            font-size: 5rem;
             font-weight: 700;
             line-height: 5.5rem;
-    
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            line-height: 2rem;
+        }
+
+        /* Camera Image */
+        .camera-image {
+            width: 500px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            position: fixed;
+            left: 40px;
+            bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #1C1C1C;
+            font-size: 1rem;
+            text-decoration: none;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            letter-spacing: 2.5px;
         }
 
         /* Photo Gallery */
         .gallery-section {
-            padding: 80px;
+            width: 80%;
             text-align: left;
         }
 
@@ -92,7 +149,7 @@
 
         /* Projects Section */
         .projects-section {
-            padding: 80px;
+            width: 80%;
             text-align: left;
         }
 
@@ -125,154 +182,87 @@
             font-size: 1.5rem;
             margin-top: 10px;
         }
-
-        p {
-            font-size: 1.2rem;
-            margin-top: 6px;
-            white-space: nowrap;
-            max-width: 500px;
-            line-height: 2rem;
-        }
-
-        /* Navigation Bar - Moved Slightly Down */
-        /* Align navigation with "Hey, I'm Midhilaj" */
-/* Keep navigation centered but move it slightly down */
-.nav {
-    position: absolute;
-    top: 80px; /* Adjust this value to move it down */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 30px;
-}
-
-
-
-        .nav a {
-            color: #1C1C1C;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 400;
-            transition: 0.3s;
-        }
-
-        .nav a:hover {
-            color: #1C1C1C;
-        }
-
-        /* Social Media Links on Left (Vertical Alignment) */
-        .social-links {
-            position: fixed;
-            left: 40px;
-            bottom: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: #1C1C1C;
-            font-size: 1rem;
-            text-decoration: none;
-            writing-mode: vertical-rl; /* Rotates text to vertical */
-            transform: rotate(180deg);
-            letter-spacing: 2.5px;
-        }
-
-        .social-links a:hover {
-            color: #1C1C1C;
-        }
-
-        /* Camera Image on Right Side */
-        .camera-image {
-            width: 500px; /* Adjusted size like Pubarun's */
-            height: auto;
-            object-fit: cover;
-        }
-        .main-content {
-    padding-left: 80px; /* Adjust this value to move text further right */
-}
-
-
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container">  <!-- START CONTAINER -->
 
-    <!-- Left Section: Text -->
-    <div class="main-content">
-    <h1 class="animated-text">Hello,<br> I am Midhilaj.</h1>
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-    <p>A young photographer with a wrecked lens.</p>
-</div>
-
-
-    <!-- Right Section: Camera Image -->
-    <img src="camera.jpg" alt="Camera" class="camera-image">
-
-    <!-- Social Media Links (Vertical) -->
-    <div class="social-links">
-        <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
-    </div>
-<!-- Photo Gallery Section -->
-    <div class="gallery-section">
-        <h2>Photo Gallery</h2>
-        <div class="gallery">
-            <img src="images/random1.jpg" alt="Random Image 1">
-            <img src="images/random2.jpg" alt="Random Image 2">
-            <img src="images/random3.jpg" alt="Random Image 3">
-            <img src="images/random4.jpg" alt="Random Image 4">
-            <img src="images/random5.jpg" alt="Random Image 5">
-            <img src="images/random6.jpg" alt="Random Image 6">
-            <img src="images/random7.jpg" alt="Random Image 7">
-            <img src="images/random8.jpg" alt="Random Image 8">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1 class="animated-text">Hello,<br> I am Midhilaj.</h1>
+            <p>A young photographer with a wrecked lens.</p>
         </div>
-        <div class="view-all">
-            <a href="projects.html">View All</a>
-        </div>
-    </div>
 
-    <!-- Projects Section -->
-    <div class="projects-section">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <a href="basant-panchami.html">
-                    <img src="images/basant-cover.jpg" alt="Basant Panchami">
-                    <h3>Basant Panchami Festival</h3>
-                </a>
+        <!-- Camera Image -->
+        <img src="camera.jpg" alt="Camera" class="camera-image">
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
+        </div>
+
+        <!-- Photo Gallery Section -->
+        <div class="gallery-section">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <img src="images/random1.jpg" alt="Random Image 1">
+                <img src="images/random2.jpg" alt="Random Image 2">
+                <img src="images/random3.jpg" alt="Random Image 3">
+                <img src="images/random4.jpg" alt="Random Image 4">
+                <img src="images/random5.jpg" alt="Random Image 5">
+                <img src="images/random6.jpg" alt="Random Image 6">
+                <img src="images/random7.jpg" alt="Random Image 7">
+                <img src="images/random8.jpg" alt="Random Image 8">
             </div>
-            <div class="project">
-                <a href="matam-muharram.html">
-                    <img src="images/muharram-cover.jpg" alt="Matam Muharram">
-                    <h3>Matam; Muharram Procession</h3>
-                </a>
+            <div class="view-all">
+                <a href="portfolio.html">View All</a>
             </div>
         </div>
-    </div>
-    
-<script>
-  // Split the text into letters
-  const text = new SplitType('.animated-text', { types: 'chars' });
 
-  // Apply GSAP animation
-  gsap.from(text.chars, {
-    opacity: 0,
-    y: 50,
-    stagger: 0.05,
-    duration: 1.2,
-    ease: "power4.out"
-  });
-</script>
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <a href="basant-panchami.html">
+                        <img src="images/basant-cover.jpg" alt="Basant Panchami">
+                        <h3>Basant Panchami Festival</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="matam-muharram.html">
+                        <img src="images/muharram-cover.jpg" alt="Matam Muharram">
+                        <h3>Matam; Muharram Procession</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
 
+    </div>  <!-- END CONTAINER -->
+
+    <script>
+      // Split the text into letters
+      const text = new SplitType('.animated-text', { types: 'chars' });
+
+      // Apply GSAP animation
+      gsap.from(text.chars, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.05,
+        duration: 1.2,
+        ease: "power4.out"
+      });
+    </script>
 
 </body>
 </html>
