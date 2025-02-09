@@ -48,6 +48,84 @@
     
         }
 
+        /* Photo Gallery */
+        .gallery-section {
+            padding: 80px;
+            text-align: left;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+
+        .gallery img:hover {
+            filter: grayscale(0%);
+        }
+
+        .view-all {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .view-all a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #1C1C1C;
+            border-bottom: 2px solid #1C1C1C;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px;
+            text-align: left;
+        }
+
+        .projects-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .project img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
         p {
             font-size: 1.2rem;
             margin-top: 6px;
@@ -144,6 +222,43 @@
         <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
         <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
     </div>
+<!-- Photo Gallery Section -->
+    <div class="gallery-section">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="images/random1.jpg" alt="Random Image 1">
+            <img src="images/random2.jpg" alt="Random Image 2">
+            <img src="images/random3.jpg" alt="Random Image 3">
+            <img src="images/random4.jpg" alt="Random Image 4">
+            <img src="images/random5.jpg" alt="Random Image 5">
+            <img src="images/random6.jpg" alt="Random Image 6">
+            <img src="images/random7.jpg" alt="Random Image 7">
+            <img src="images/random8.jpg" alt="Random Image 8">
+        </div>
+        <div class="view-all">
+            <a href="projects.html">View All</a>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <a href="basant-panchami.html">
+                    <img src="images/basant-cover.jpg" alt="Basant Panchami">
+                    <h3>Basant Panchami Festival</h3>
+                </a>
+            </div>
+            <div class="project">
+                <a href="matam-muharram.html">
+                    <img src="images/muharram-cover.jpg" alt="Matam Muharram">
+                    <h3>Matam; Muharram Procession</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    
 <script>
   // Split the text into letters
   const text = new SplitType('.animated-text', { types: 'chars' });
