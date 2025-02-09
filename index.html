@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Midhilaj | Photography</title>
-    
-    <!-- Google Font: Montserrat -->
+    <title>Wrecked Lens | Midhilaj</title>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-   <!-- GSAP Animation Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-<!-- SplitType for Split Text Animation -->
-<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
-
 
     <!-- Custom CSS -->
     <style>
@@ -24,51 +17,19 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Background and Font Colors (Similar to Pubarun's Website) */
         body {
-            background-color: #DCDCDC;  /* Dark Grey like Pubarun's site */
-            color: #1C1C1C;  /* Light Grey text color */
-            height: 100vh;
+            background-color: #DCDCDC;
+            color: #1C1C1C;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .nav {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 70px;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
         }
-
-        /* Left Section: Text Content */
-        .text-container {
-            width: 50%;
-            text-align: left;
-        }
-
-        h1 {
-            font-size: 5rem; /* Similar size to Pubarun's website */
-            font-weight: 700;
-            line-height: 5.5rem;
-    
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-top: 6px;
-            white-space: nowrap;
-            max-width: 500px;
-            line-height: 2rem;
-        }
-
-        /* Navigation Bar - Moved Slightly Down */
-        /* Align navigation with "Hey, I'm Midhilaj" */
-/* Keep navigation centered but move it slightly down */
-.nav {
-    position: absolute;
-    top: 80px; /* Adjust this value to move it down */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 30px;
-}
-
-
 
         .nav a {
             color: #1C1C1C;
@@ -79,43 +40,86 @@
         }
 
         .nav a:hover {
-            color: #1C1C1C;
+            color: #333;
         }
 
-        /* Social Media Links on Left (Vertical Alignment) */
-        .social-links {
-            position: fixed;
-            left: 40px;
-            bottom: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* Hero Section */
+        .hero {
+            margin-top: 100px;
+            font-size: 3rem;
+            font-weight: 600;
         }
 
-        .social-links a {
-            color: #1C1C1C;
-            font-size: 1rem;
-            text-decoration: none;
-            writing-mode: vertical-rl; /* Rotates text to vertical */
-            transform: rotate(180deg);
-            letter-spacing: 2.5px;
+        /* Photo Gallery Section */
+        .gallery-container {
+            margin-top: 100px;
+            text-align: center;
         }
 
-        .social-links a:hover {
-            color: #1C1C1C;
+        .gallery-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
-        /* Camera Image on Right Side */
-        .camera-image {
-            width: 500px; /* Adjusted size like Pubarun's */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
             height: auto;
-            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out;
+            cursor: pointer;
         }
-        .main-content {
-    padding-left: 80px; /* Adjust this value to move text further right */
-}
 
+        .gallery img:hover {
+            filter: grayscale(0%);
+        }
 
+        /* Projects Section */
+        .projects-container {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .projects-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .project-title {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -124,40 +128,89 @@
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="portfolio.html">Projects</a>
+        <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Left Section: Text -->
-    <div class="main-content">
-    <h1 class="animated-text">Hello,<br> I am Midhilaj.</h1>
-
-    <p>A young photographer with a wrecked lens.</p>
-</div>
-
-
-    <!-- Right Section: Camera Image -->
-    <img src="camera.jpg" alt="Camera" class="camera-image">
-
-    <!-- Social Media Links (Vertical) -->
-    <div class="social-links">
-        <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
+    <!-- Hero Section -->
+    <div class="hero">
+        Hey, I'm Midhilaj
     </div>
-<script>
-  // Split the text into letters
-  const text = new SplitType('.animated-text', { types: 'chars' });
 
-  // Apply GSAP animation
-  gsap.from(text.chars, {
-    opacity: 0,
-    y: 50,
-    stagger: 0.05,
-    duration: 1.2,
-    ease: "power4.out"
-  });
-</script>
+    <!-- Photo Gallery Section -->
+    <div class="gallery-container">
+        <h2>Photo Gallery</h2>
+        <div class="gallery" id="photo-gallery"></div>
+    </div>
 
+    <!-- Projects Section -->
+    <div class="projects-container">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project" onclick="window.location.href='basant-panchami.html'">
+                <img src="images/basant-cover.jpg" alt="Basant Panchami">
+                <div class="project-title">Basant Panchami Festival</div>
+            </div>
+            <div class="project" onclick="window.location.href='matam-muharram.html'">
+                <img src="images/matam-cover.jpg" alt="Matam Muharram">
+                <div class="project-title">Matam: Muharram Procession</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Dynamic Photo Gallery (Randomized)
+        const images = [
+            "images/basant-panchami/img1.jpg.jpg",
+            "images/basant-panchami/img2.jpg.jpg",
+            "images/basant-panchami/img3.jpg.jpg",
+            "images/basant-panchami/img4.jpg.jpg",
+            "images/basant-panchami/img5.jpg.jpg",
+            "images/basant-panchami/img6.jpg.jpg",
+            "images/basant-panchami/img7.jpg.jpg",
+            "images/basant-panchami/img8.jpg.jpg",
+            "images/basant-panchami/img9.jpg.jpg",
+            "images/basant-panchami/img10.jpg.jpg",
+            "images/basant-panchami/img11.jpg.jpg",
+            "images/basant-panchami/img12.jpg.jpg",
+            "images/basant-panchami/img13.jpg.jpg",
+            "images/basant-panchami/img14.jpg.jpg",
+            "images/basant-panchami/img15.jpg.jpg",
+            "images/basant-panchami/img16.jpg.jpg",
+            "images/basant-panchami/img17.jpg.jpg",
+            "images/matam-muharram/img1.jpg.jpg",
+            "images/matam-muharram/img2.jpg.jpg",
+            "images/matam-muharram/img3.jpg.jpg",
+            "images/matam-muharram/img4.jpg.jpg",
+            "images/matam-muharram/img5.jpg.jpg",
+            "images/matam-muharram/img6.jpg.jpg",
+            "images/matam-muharram/img7.jpg.jpg",
+            "images/matam-muharram/img8.jpg.jpg",
+            "images/matam-muharram/img9.jpg.jpg",
+            "images/matam-muharram/img10.jpg.jpg",
+            "images/matam-muharram/img11.jpg.jpg",
+            "images/matam-muharram/img12.jpg.jpg",
+            "images/matam-muharram/img13.jpg.jpg",
+            "images/matam-muharram/img14.jpg.jpg",
+            "images/matam-muharram/img15.jpg.jpg",
+            "images/matam-muharram/img16.jpg.jpg",
+            "images/matam-muharram/img17.jpg.jpg"
+        ];
+
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        const shuffledImages = shuffleArray(images);
+        const gallery = document.getElementById("photo-gallery");
+
+        shuffledImages.forEach(imgSrc => {
+            let img = document.createElement("img");
+            img.src = imgSrc;
+            gallery.appendChild(img);
+        });
+    </script>
 
 </body>
 </html>
