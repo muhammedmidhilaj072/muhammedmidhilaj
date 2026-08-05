@@ -1,329 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Midhilaj | Photography</title>
-    
-    <!-- Google Font: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- GSAP Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <!-- SplitType for Split Text Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
-
-    <!-- Custom CSS -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Background and Font Colors */
-        body {
-            background-color: #DCDCDC;  /* Light Grey */
-            color: #1C1C1C;  /* Dark Text */
-        }
-
-        /* Main Container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 80px; /* Adjust spacing between sections */
-            padding: 70px;
-        }
-
-        /* Navigation Bar */
-        .nav {
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav a {
-            color: #1C1C1C;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 400;
-            transition: 0.3s;
-        }
-
-        .nav a:hover {
-            color: #1C1C1C;
-        }
-
-        /* Main Header Section */
-        .header-section {
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        h1 {
-            font-size: 5rem;
-            font-weight: 700;
-            line-height: 5.5rem;
-            text-align: left;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            line-height: 2rem;
-        }
-
-        /* Camera Image */
-        .camera-image {
-            width: 500px;
-            height: auto;
-            object-fit: cover;
-        }
-
-        /* Social Media Links */
-        .social-links {
-            position: fixed;
-            left: 40px;
-            bottom: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: #1C1C1C;
-            font-size: 1rem;
-            text-decoration: none;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            letter-spacing: 2.5px;
-        }
-
-        /* Photo Gallery */
-        .gallery-section {
-            width: 80%;
-            text-align: left;
-        }
-
-        .gallery-section h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts for screen size */
-    gap: 15px; /* Reduce gap between images for compact look */
-}
-
-        .gallery a {
-            cursor: pointer;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: all 0.5s ease;
-        }
-
-        .gallery img:hover {
-            filter: grayscale(0%);
-        }
-.lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .view-all {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .view-all a {
-            text-decoration: none;
-            font-size: 1.2rem;
-            color: #1C1C1C;
-            border-bottom: 2px solid #1C1C1C;
-        }
-
-        /* Projects Section */
-       .projects-section {
-    width: 80%;
-    text-align: left;
-    margin-top: 40px;  /* Adjust to align with the gallery */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Align left like gallery */
-}
-
-
-        .projects-section h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .projects-container {
-            display: flex;
-    justify-content: center; /* Ensures items stay centered */
-    flex-wrap: wrap;
-    gap: 40px;
-    width: 100%;
-        }
-
-        .project {
-           flex: 0 1 300px; /* Fixes width for uniformity */
-    max-width: 450px;
-    text-align: center;
-        }
-
-        .project img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .project h3 {
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammed Midhilaj — Photography</title>
+<meta name="description" content="Muhammed Midhilaj is a photojournalist documenting festivals, processions and street life across India. Portfolio of Wrecked Lens.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">  <!-- START CONTAINER -->
+<div class="sprockets"></div>
 
-        <!-- Navigation -->
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+<header class="site-header on-dark" id="siteHeader">
+  <a class="wordmark" href="index.html">wrecked<span>_</span>lens</a>
+  <nav class="primary-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-        <!-- Header Section -->
-        <div class="header-section">
-            <h1 class="animated-text">Hello,<br> I am Midhilaj.</h1>
-            <p>A young photographer with a wrecked lens.</p>
-        </div>
+<section class="hero">
+  <img class="hero-img" src="images/hero-basant.jpg" alt="A man sorts marigold garlands into a woven basket at Basant Panchami">
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Photojournalism — India</span>
+    <h1>Hello, I'm Midhilaj.<br>A young photographer<br>with a <em>wrecked lens</em>.</h1>
+    <p class="hero-tagline">I photograph festivals, processions and the everyday rituals that hold communities together — one imperfect frame at a time.</p>
+  </div>
+  <div class="hero-foot">
+    <a href="https://www.instagram.com/wrecked_lens" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
 
-        <!-- Camera Image -->
-        <img src="camera.jpg" alt="Camera" class="camera-image">
+<div class="statement reveal">
+  <p>Every frame is a <strong>negotiation</strong> between chaos and stillness — I shoot for the moment that holds both.</p>
+</div>
 
-        <!-- Social Media Links -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/wrecked_lens" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank">LinkedIn</a>
-        </div>
-
-        <!-- Photo Gallery Section -->
-        <div class="gallery-section">
-        <h2>Photo Gallery</h2>
-        <div class="gallery">
-            <a href="images/basant-panchami/img1.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img1.jpg.jpg" alt="Random Image 1"></a>
-            <a href="images/basant-panchami/img2.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img2.jpg.jpg" alt="Random Image 2"></a>
-            <a href="images/basant-panchami/img3.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img3.jpg.jpg" alt="Random Image 3"></a>
-       <a href="images/basant-panchami/img4.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img4.jpg.jpg" alt="Random Image 3"></a>
-            <a href="images/basant-panchami/img5.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img5.jpg.jpg" alt="Random Image 3"></a>
-            <a href="images/basant-panchami/img6.jpg.jpg" class="gallery-item"><img src="images/basant-panchami/img6.jpg.jpg" alt="Random Image 3"></a>
-        </div>
+<section class="section">
+  <div class="section-head reveal">
+    <div>
+      <span class="index">Selected frames</span>
+      <h2>From the contact sheet</h2>
     </div>
-        <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
+    <a class="section-link" href="portfolio.html">View all projects →</a>
+  </div>
+
+  <div class="contact-sheet reveal">
+    <a class="frame" href="images/gallery/img1.jpg" data-caption="Basant Panchami — Frame 01">
+      <img src="images/gallery/img1.jpg" alt="Man sorting marigold garlands into a basket, Basant Panchami">
+      <span class="frame-tag">01 — Basant Panchami</span>
+    </a>
+    <a class="frame" href="images/gallery/img3.jpg" data-caption="Basant Panchami — Frame 03">
+      <img src="images/gallery/img3.jpg" alt="Close up of hands holding marigold petals">
+      <span class="frame-tag">03 — Basant Panchami</span>
+    </a>
+    <a class="frame" href="images/gallery/img5.jpg" data-caption="Basant Panchami — Frame 05">
+      <img src="images/gallery/img5.jpg" alt="Man in white cap arranging marigold wreaths on a patterned carpet">
+      <span class="frame-tag">05 — Basant Panchami</span>
+    </a>
+    <a class="frame" href="images/gallery/img7.jpg" data-caption="Basant Panchami — Frame 07">
+      <img src="images/gallery/img7.jpg" alt="Overhead view of marigold wreaths arranged on a carpet">
+      <span class="frame-tag">07 — Basant Panchami</span>
+    </a>
+    <a class="frame" href="images/gallery/img9.jpg" data-caption="Basant Panchami — Frame 09">
+      <img src="images/gallery/img9.jpg" alt="Basant Panchami festival scene">
+      <span class="frame-tag">09 — Basant Panchami</span>
+    </a>
+    <a class="frame" href="images/gallery/img11.jpg" data-caption="Basant Panchami — Frame 11">
+      <img src="images/gallery/img11.jpg" alt="Basant Panchami festival scene">
+      <span class="frame-tag">11 — Basant Panchami</span>
+    </a>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="section-head reveal">
+    <div>
+      <span class="index">002</span>
+      <h2>Projects</h2>
     </div>
-            <div class="view-all">
-                <a href="portfolio.html">View All</a>
-            </div>
+  </div>
+
+  <div class="projects-grid reveal">
+    <a class="project-card" href="basant-panchami.html">
+      <div class="project-frame">
+        <img src="images/projects/basant-cover.jpg" alt="Basant Panchami Festival cover image">
+      </div>
+      <div class="project-meta">
+        <div>
+          <span class="project-tag">Festival — Delhi</span>
+          <h3>Basant Panchami</h3>
         </div>
+        <span class="arrow">View story →</span>
+      </div>
+    </a>
 
-        <!-- Projects Section -->
-        <div class="projects-section">
-            <h2>Projects</h2>
-            <div class="projects-container">
-                <div class="project">
-                    <a href="basant-panchami.html">
-                        <img src="images/IMG_0395 (1).jpg" alt="Basant Panchami">
-                        <h3>Basant Panchami Festival</h3>
-                    </a>
-                </div>
-                <div class="project">
-                    <a href="matam-muharram.html">
-                        <img src="images/Matam Muharram.jpg" alt="Matam Muharram">
-                        <h3>Matam; Muharram Procession</h3>
-                    </a>
-                </div>
-            </div>
+    <a class="project-card" href="matam-muharram.html">
+      <div class="project-frame">
+        <img src="images/projects/matam-cover.jpg" alt="Matam, Muharram procession cover image">
+      </div>
+      <div class="project-meta">
+        <div>
+          <span class="project-tag">Procession — Mourning ritual</span>
+          <h3>Matam, Muharram</h3>
         </div>
+        <span class="arrow">View story →</span>
+      </div>
+    </a>
+  </div>
+</section>
 
-    </div>  <!-- END CONTAINER -->
+<footer class="site-footer">
+  <a class="wordmark" href="index.html" style="font-size:1rem;">wrecked<span>_</span>lens</a>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/wrecked_lens" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/muhammed-midhilaj-92923122a" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026 Muhammed Midhilaj</span>
+</footer>
 
-    <script>
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox .close');
+<div class="sprockets"></div>
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function(event) {
-                event.preventDefault();
-                lightbox.style.display = "flex";
-                lightboxImg.src = this.href;
-            });
-        });
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = "none";
-        });
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">Close ×</span>
+  <img id="lightboxImg" src="" alt="">
+  <span class="lightbox-caption" id="lightboxCaption"></span>
+</div>
 
-        lightbox.addEventListener('click', (event) => {
-            if (event.target === lightbox) {
-                lightbox.style.display = "none";
-            }
-        });
-        document.addEventListener("DOMContentLoaded", function() {
-    let splitText = new SplitType('.animated-text', { types: 'chars' });
+<script>
+  const frames = document.querySelectorAll('.frame');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
 
-    gsap.from(splitText.chars, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.05,
-        duration: 1,
-        ease: "power2.out"
+  frames.forEach(frame => {
+    frame.addEventListener('click', e => {
+      e.preventDefault();
+      lightboxImg.src = frame.getAttribute('href');
+      lightboxImg.alt = frame.querySelector('img').alt;
+      lightboxCaption.textContent = frame.getAttribute('data-caption') || '';
+      lightbox.classList.add('is-open');
     });
-});
+  });
 
-    </script>
+  function closeLightbox() { lightbox.classList.remove('is-open'); lightboxImg.src = ''; }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
