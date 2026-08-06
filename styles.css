@@ -1,25 +1,21 @@
 /* ===========================================================
-   WRECKED LENS — Design system v2
-   Principle: the photography supplies the color. The interface
-   supplies almost none. One typeface, wide weight/width range.
+   MUHAMMED MIDHILAJ — Design system v3
+   Reference DNA: pubarunbasu.com, stevemccurry.com
+   Full-bleed photography, minimal all-caps chrome, the work
+   is the entire argument. No cards, no gimmicks, no accent color.
 =========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --bg: #FAF9F6;
-  --ink: #121110;
-  --stone: #6E6D68;
-  --line: rgba(18, 17, 16, 0.13);
-  --line-strong: rgba(18, 17, 16, 0.32);
-  --footer-bg: #121110;
-  --footer-text: #F2F0EA;
-
+  --bg: #FFFFFF;
+  --ink: #111111;
+  --stone: #757570;
+  --line: rgba(17,17,17,0.12);
   --face: 'Archivo', -apple-system, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -35,6 +31,278 @@ img { display: block; max-width: 100%; }
 ::selection { background: var(--ink); color: var(--bg); }
 
 @media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Header (overlay on hero) ---------- */
+
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(20px, 3vw, 34px) clamp(20px, 4vw, 48px);
+  color: #fff;
+}
+
+.site-header.on-light { position: relative; color: var(--ink); }
+
+.wordmark {
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav.primary-nav { display: flex; gap: clamp(18px, 3vw, 34px); }
+
+nav.primary-nav a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+nav.primary-nav a:hover,
+nav.primary-nav a[aria-current="page"] { opacity: 1; }
+
+@media (max-width: 620px) {
+  nav.primary-nav { gap: 12px; }
+  nav.primary-nav a { font-size: 0.62rem; letter-spacing: 0.06em; }
+}
+
+/* ---------- Full-bleed hero ---------- */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.55) 100%);
+}
+
+.hero-foot {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 5;
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 48px);
+  color: #fff;
+}
+
+.hero-foot h1 {
+  font-size: clamp(1.9rem, 5.6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero-foot p {
+  margin-top: 14px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+}
+
+/* ---------- Section shell ---------- */
+
+.section { padding: clamp(64px, 9vw, 110px) clamp(20px, 4vw, 48px); }
+.section-tight { padding: 0 clamp(20px, 4vw, 48px) clamp(64px, 9vw, 110px); }
+
+.eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 22px;
+}
+
+/* ---------- Intro statement ---------- */
+
+.statement {
+  max-width: 62ch;
+}
+
+.statement p {
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+
+.statement p .dim { color: var(--stone); font-weight: 400; }
+
+/* ---------- Work grid (full-bleed, near-zero gap) ---------- */
+
+.work-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 clamp(20px, 4vw, 48px);
+  margin-bottom: 4px;
+}
+
+.work-head .eyebrow { margin-bottom: 0; }
+
+.work-head a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding-bottom: 20px;
+  transition: color 0.2s ease;
+}
+
+.work-head a:hover { color: var(--ink); }
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.work-grid a.feature { grid-column: span 3; }
+
+.work-item { position: relative; overflow: hidden; background: #eee; }
+.work-item.ratio-wide { aspect-ratio: 16/8.5; }
+.work-item.ratio-sq { aspect-ratio: 4/5; }
+
+.work-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+.work-item:hover img { transform: scale(1.035); }
+
+.work-caption {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px clamp(20px, 4vw, 48px) 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+@media (max-width: 780px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-item.ratio-sq { aspect-ratio: 4/5; }
+}
+
+/* ---------- About teaser ---------- */
+
+.about-teaser {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.about-teaser img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+
+.about-teaser .copy p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--stone);
+  max-width: 46ch;
+  margin-bottom: 22px;
+}
+
+.about-teaser .copy a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 3px;
+}
+
+@media (max-width: 780px) {
+  .about-teaser { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  border-top: 1px solid var(--line);
+  padding: clamp(28px, 4vw, 40px) clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-links { display: flex; gap: 22px; }
+
+.footer-links a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover { color: var(--ink); }
+
+.footer-copy {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  display: none;
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(8,8,8,0.96);
+  align-items: center; justify-content: center;
+  padding: 40px;
+}
+
+.lightbox.is-open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 86vh; object-fit: contain; }
+
+.lightbox-close {
+  position: absolute;
+  top: 24px; right: clamp(20px, 4vw, 48px);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------- Reveal ---------- */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }@media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
 
