@@ -79,6 +79,63 @@
       <li><a href="#"><span class="num">02</span><span class="name">Muharram</span><span class="soon">Coming soon</span></a></li>
       <li><a href="#"><span class="num">03</span><span class="name">Protests</span><span class="soon">Coming soon</span></a></li>
       <li><a href="#"><span class="num">04</span><span class="name">Jama Masjid</span><span class="soon">Coming soon</span></a></li>
+      <li><a href="sarkhej.html"><span class="num">05</span><span class="name">Sarkhej</span></a></li>
+      <li><a href="#"><span class="num">06</span><span class="name">Fish Harbour</span><span class="soon">Coming soon</span></a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Muhammed Midhilaj</div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+  main { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3.5rem, 8vw, 6rem); }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 7vw, 4.5rem); letter-spacing: -0.03em; margin: 0 0 2.5rem; }
+
+  .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .list li { border-bottom: 1px solid var(--line); }
+  .list a {
+    display: flex; align-items: baseline; gap: 1.25rem; text-decoration: none;
+    padding: clamp(1.25rem, 3vw, 1.75rem) 0.25rem;
+  }
+  .list .num { font-family: var(--display); font-weight: 600; color: var(--muted); font-size: 1rem; width: 2ch; flex: none; }
+  .list .name { font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 4vw, 2rem); letter-spacing: -0.01em; }
+  .list a:hover .name { color: var(--blue); }
+  .list .soon { margin-left: auto; font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+
+  footer { padding: 1.5rem 0 calc(2rem + env(safe-area-inset-bottom, 0px)); font-family: var(--display); font-size: 0.95rem; color: var(--muted); border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="index.html">Muhammed Midhilaj</a>
+    <nav aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Projects</h1>
+    <!--
+      Each project below is a placeholder. To publish one:
+      1. Create its page (e.g. basant-panchami.html) and put its photos in a folder.
+      2. Replace href="#" with that page's file name.
+      3. Optionally remove the "Coming soon" label.
+    -->
+    <ul class="list">
+      <li><a href="#"><span class="num">01</span><span class="name">Basant Panchami</span><span class="soon">Coming soon</span></a></li>
+      <li><a href="#"><span class="num">02</span><span class="name">Muharram</span><span class="soon">Coming soon</span></a></li>
+      <li><a href="#"><span class="num">03</span><span class="name">Protests</span><span class="soon">Coming soon</span></a></li>
+      <li><a href="#"><span class="num">04</span><span class="name">Jama Masjid</span><span class="soon">Coming soon</span></a></li>
       <li><a href="#"><span class="num">05</span><span class="name">Sarkhej</span><span class="soon">Coming soon</span></a></li>
       <li><a href="#"><span class="num">06</span><span class="name">Fish Harbour</span><span class="soon">Coming soon</span></a></li>
     </ul>
