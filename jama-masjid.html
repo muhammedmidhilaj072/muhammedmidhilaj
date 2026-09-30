@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Month of Evenings: Ramzan, Jama Masjid, Delhi | Muhammed Midhilaj</title>
+<meta name="description" content="A photo essay on the evenings of Ramzan at Jama Masjid, Delhi, where the courtyard, the streets and the surrounding city fold into one another.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF0EE; --ink: #16222B; --muted: #55646D; --blue: #1F4E79; --mat: #DCE1DE;
+    --line: rgba(22, 34, 43, 0.2);
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+    box-sizing: border-box;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #11181D; --ink: #E7ECE8; --muted: #93A2AB; --blue: #86B5DE; --mat: #1B252C; --line: rgba(231,236,232,.22);
+    }
+  }
+  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: inherit; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--text); font-size: 1.125rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .wrap { width: min(1240px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 20; padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .mark { font-family: var(--display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; text-decoration: none; }
+  nav { display: flex; gap: 1.75rem; font-family: var(--display); font-size: 1rem; font-weight: 600; }
+  nav a { text-decoration: none; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+  nav a:hover { border-color: var(--blue); }
+
+  /* Project intro */
+  .intro { padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem); border-bottom: 1px solid var(--line); }
+  .back { display: inline-block; font-family: var(--display); font-weight: 600; font-size: 0.95rem; color: var(--muted); text-decoration: none; margin-bottom: 1.5rem; }
+  .back:hover { color: var(--ink); }
+  .intro h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.02; letter-spacing: -0.03em;
+    margin: 0 0 1.5rem; max-width: 22ch;
+  }
+  .intro p { max-width: 46rem; font-size: 1.2rem; line-height: 1.6; color: var(--ink); margin: 0; }
+  .intro .meta { margin-top: 1.5rem; font-family: var(--display); font-size: 0.95rem; color: var(--muted); }
+
+  /* Gallery */
+  .gallery { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3.5rem, 8vw, 6rem); }
+  .grid { columns: 3 320px; column-gap: 1.5rem; }
+  .card { break-inside: avoid; margin: 0 0 1.5rem; }
+  .card.w-in { padding-inline: 8%; }
+  .card.w-out { margin-inline: -6%; }
+  .card button.open { display: block; width: 100%; padding: 0; border: 0; background: var(--mat); cursor: zoom-in; overflow: hidden; }
+  .card img {
+    width: 100%; height: auto; min-height: 120px;
+    filter: grayscale(1) contrast(1.06);
+    transition: filter .7s ease, transform .6s ease;
+  }
+  @media (hover: hover) {
+    .card button.open:hover img,
+    .card button.open:focus-visible img { filter: none; transform: scale(1.02); }
+  }
+  @media (hover: none) { .card img.in-view { filter: none; } }
+
+  footer { padding: 1.5rem 0 calc(2rem + env(safe-area-inset-bottom, 0px)); font-family: var(--display); font-size: 0.95rem; color: var(--muted); border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 2rem; }
+
+  /* Lightbox */
+  .btn { font-family: var(--display); font-weight: 600; font-size: 1rem; background: none; color: var(--ink); border: 1px solid var(--line); padding: 0.7rem 1.2rem; cursor: pointer; border-radius: 3px; }
+  .btn:hover { border-color: var(--ink); }
+  dialog.lightbox {
+    width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; padding: 0; border: 0;
+    background: var(--paper); color: var(--ink);
+  }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.8); }
+  .lb-inner { height: 100%; display: grid; grid-template-rows: auto 1fr auto; padding: max(1rem, env(safe-area-inset-top, 0px)) 1.25rem max(1rem, env(safe-area-inset-bottom, 0px)); gap: 0.75rem; }
+  .lb-bar { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); color: var(--muted); }
+  .lb-stage { min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .lb-stage img { max-height: 100%; max-width: 100%; object-fit: contain; background: var(--mat); }
+  .lb-foot { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; font-family: var(--display); }
+  .lb-nav { display: flex; gap: 0.5rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="index.html">Muhammed Midhilaj</a>
+    <nav aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <a class="back" href="projects.html">&larr; All projects</a>
+      <h1>A Month of Evenings<br>Ramzan &mdash; Jama Masjid, Delhi</h1>
+      <p>There is an hour before iftar when Jama Masjid begins to change. It is not a sudden transformation, but one that unfolds gradually through movement and sound. The courtyard fills long before the prayer begins, and the streets outside slowly lose their distinction from the space within. People continue to arrive, vendors continue to serve, conversations overlap, pigeons rise and settle again, and the echoes of the old mosque carry every sound a little further. What emerges is not simply a gathering of people, but a different experience of the city itself. For a short while, Jama Masjid is no longer contained by its walls; it extends into the surrounding streets, just as the city seems to fold into its courtyard.</p>
+      <p class="meta">Jama Masjid, Delhi &middot; Ramzan</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <div class="grid" id="grid1"></div>
+    </div>
+  </section>
+
+  <section class="intro" style="border-bottom:none">
+    <div class="wrap">
+      <p>The red sandstone, the marble, the towering minarets that have watched over the city for centuries. Yet its character is shaped just as much by the people who inhabit it each day. During Ramzan, the architecture becomes a backdrop to countless ordinary acts: conversations carried across the courtyard, children chasing pigeons, families sharing food, worshippers finding a quiet corner before prayer. The monument is not separate from the life around it; it is constantly remade through use, memory, and presence.</p>
+    </div>
+  </section>
+
+  <section class="gallery" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid" id="grid2"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span id="year"></span>
+    <span>All photographs are the property of the photographer.</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lb" aria-label="Photo viewer">
+  <div class="lb-inner">
+    <div class="lb-bar">
+      <span id="lbCount"></span>
+      <button class="btn" id="lbClose" type="button">Close</button>
+    </div>
+    <div class="lb-stage"><img id="lbImg" alt=""></div>
+    <div class="lb-foot">
+      <div class="lb-nav">
+        <button class="btn" id="lbPrev" type="button" aria-label="Previous photo">Previous</button>
+        <button class="btn" id="lbNext" type="button" aria-label="Next photo">Next</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  /* Your photos: images/jamamasjid/j01.jpg ... j15.jpg
+     If a file name doesn't match exactly (capitalisation counts on GitHub Pages),
+     that photo is skipped rather than showing a broken image.
+     Split roughly in half: first group runs before the second description,
+     second group runs after it. Change SPLIT_AT to rebalance the two galleries. */
+  var FOLDER = "images/jamamasjid/";
+  var TOTAL = 15;
+  var SPLIT_AT = 7; // first grid gets photos 1-7, second grid gets 8-15
+  var FILES = (function () {
+    var a = [];
+    for (var i = 1; i <= TOTAL; i++) a.push("j" + (i < 10 ? "0" + i : i) + ".jpg");
+    return a;
+  })();
+
+  var photos = FILES.map(function (f, i) { return { src: FOLDER + f, n: i + 1 }; });
+  var visible = photos; // shared order across both grids, for the lightbox's next/previous
+
+  function renderGrid(gridEl, list) {
+    var rhythm = ["", "w-in", "", "w-out", "", ""];
+    gridEl.innerHTML = "";
+    list.forEach(function (p, idx) {
+      var fig = document.createElement("figure");
+      fig.className = "card " + rhythm[idx % rhythm.length];
+      var btn = document.createElement("button");
+      btn.className = "open"; btn.type = "button";
+      btn.setAttribute("aria-label", "View photo " + p.n);
+      var img = document.createElement("img");
+      img.src = p.src; img.alt = "Jama Masjid, Ramzan, photo " + p.n; img.loading = "lazy"; img.decoding = "async";
+      img.addEventListener("error", function () {
+        console.warn("Photo not found: " + p.src);
+        fig.remove();
+        visible = visible.filter(function (v) { return v !== p; });
+      });
+      btn.appendChild(img);
+      btn.addEventListener("click", function () { openLightbox(visible.indexOf(p)); });
+      fig.appendChild(btn);
+      gridEl.appendChild(fig);
+    });
+  }
+
+  function render() {
+    renderGrid(document.getElementById("grid1"), photos.slice(0, SPLIT_AT));
+    renderGrid(document.getElementById("grid2"), photos.slice(SPLIT_AT));
+    observeForTouch();
+  }
+
+  var io = null;
+  function observeForTouch() {
+    if (io) io.disconnect();
+    if (!window.matchMedia("(hover: none)").matches || !("IntersectionObserver" in window)) return;
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle("in-view", en.isIntersecting); });
+    }, { rootMargin: "-42% 0px -42% 0px" });
+    document.querySelectorAll(".grid img").forEach(function (im) { io.observe(im); });
+  }
+
+  var lb = document.getElementById("lb");
+  var cur = 0;
+  function showLb() {
+    var p = visible[cur];
+    document.getElementById("lbImg").src = p.src;
+    document.getElementById("lbImg").alt = "Jama Masjid, Ramzan, photo " + p.n;
+    document.getElementById("lbCount").textContent = (cur + 1) + " of " + visible.length;
+  }
+  function openLightbox(i) { cur = i; showLb(); if (!lb.open) lb.showModal(); }
+  function step(d) { cur = (cur + d + visible.length) % visible.length; showLb(); }
+  document.getElementById("lbClose").addEventListener("click", function () { lb.close(); });
+  document.getElementById("lbPrev").addEventListener("click", function () { step(-1); });
+  document.getElementById("lbNext").addEventListener("click", function () { step(1); });
+  lb.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") step(-1);
+    if (e.key === "ArrowRight") step(1);
+  });
+  lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+
+  document.getElementById("year").textContent = "\u00A9 " + new Date().getFullYear() + " Muhammed Midhilaj";
+  render();
+})();
+</script>
+</body>
+</html>
